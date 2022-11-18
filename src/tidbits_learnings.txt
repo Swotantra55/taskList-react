@@ -1,0 +1,58 @@
+In react the component function and the file 
+should always be in capital. for example:
+
+Header.js
+const Header = () => {
+    return (
+        <h1><h1>
+    )
+}
+export default Header
+
+**************************************************
+2. default props value instead of props value sent from parent component
+
+Taskbar.defaultProps ={
+    name :"Samsung"
+}
+ *************************************
+ 3.     <Taskbar  motto='From the Future' />
+ passing down the props value
+
+ ********************************************************
+
+ 4. receiving props
+
+ const Func = (props) =>{
+    return (<h1>{props.name}</h1>
+    )
+ }
+
+ or destructuring
+ const Func =  ({name, motto})=>{
+    return (<h1>{name}</h1>
+    )
+ }
+*****************************************************************
+5. set props data types 
+import PropTypes from 'prop-types'
+Taskbar.propTypes = {
+    motto: PropTypes.string,
+}
+<Taskbar motto={1234} />
+
+The page loads with correct result
+ but in console it warns us about the mismatch of the data type
+ but if you use
+ PropTypes.string.isRequired
+ it is compulsory
+
+ ******************************************************************
+ 6. To styling a component
+ <h2 style={Object} >........</h2>
+ const Obj ={
+    textAlign: 'end',
+ }
+
+or style = {{    textAlign: 'end',.....}}
+because we put obj inside curly braces
